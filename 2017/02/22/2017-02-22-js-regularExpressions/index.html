@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: jekyll | 千秋</title>
+  <title>JS 正则表达式 | 千秋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="千秋">
-<meta property="og:url" content="http://yoursite.com/tags/jekyll/index.html">
+  <meta name="description" content="正则表达式基本规则1、普通字符包括：字母、数字、汉字、下划线、没有特殊定义的标点符号。（在匹配一个字符串时，匹配与之相同的一个字符）  2、简单的转义字符（1）在字母面前加”\”来代替一些不方便书写的字符，匹配与之相同的一个字符    表达式 可匹配     \r 回车   \n 换行符   \t 制表符    （2）在有特殊用处的标点符号前加“\”代表该符号本身，匹配与之相同的一个字符    表">
+<meta name="keywords" content="javascript,正则表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS 正则表达式">
+<meta property="og:url" content="http://yoursite.com/2017/02/22/2017-02-22-js-regularExpressions/index.html">
 <meta property="og:site_name" content="千秋">
+<meta property="og:description" content="正则表达式基本规则1、普通字符包括：字母、数字、汉字、下划线、没有特殊定义的标点符号。（在匹配一个字符串时，匹配与之相同的一个字符）  2、简单的转义字符（1）在字母面前加”\”来代替一些不方便书写的字符，匹配与之相同的一个字符    表达式 可匹配     \r 回车   \n 换行符   \t 制表符    （2）在有特殊用处的标点符号前加“\”代表该符号本身，匹配与之相同的一个字符    表">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-03-22T09:59:42.297Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="千秋">
+<meta name="twitter:title" content="JS 正则表达式">
+<meta name="twitter:description" content="正则表达式基本规则1、普通字符包括：字母、数字、汉字、下划线、没有特殊定义的标点符号。（在匹配一个字符串时，匹配与之相同的一个字符）  2、简单的转义字符（1）在字母面前加”\”来代替一些不方便书写的字符，匹配与之相同的一个字符    表达式 可匹配     \r 回车   \n 换行符   \t 制表符    （2）在有特殊用处的标点符号前加“\”代表该符号本身，匹配与之相同的一个字符    表">
   
     <link rel="alternative" href="/atom.xml" title="千秋" type="application/atom+xml">
   
@@ -154,60 +159,467 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2017-02-22-js-regularExpressions" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/17/jekyll/" class="archive-article-date">
-  	<time datetime="2019-04-17T15:32:43.914Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/jekyll/">windows下安装jekyll</a>
+    <h1 class="article-title" itemprop="name">
+      JS 正则表达式
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/02/22/2017-02-22-js-regularExpressions/" class="archive-article-date">
+  	<time datetime="2017-02-22T08:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="正则表达式基本规则"><a href="#正则表达式基本规则" class="headerlink" title="正则表达式基本规则"></a>正则表达式基本规则</h3><h4 id="1、普通字符"><a href="#1、普通字符" class="headerlink" title="1、普通字符"></a>1、普通字符</h4><p>包括：字母、数字、汉字、下划线、没有特殊定义的标点符号。<br>（在匹配一个字符串时，匹配与之相同的一个字符）</p>
+<hr>
+<h4 id="2、简单的转义字符"><a href="#2、简单的转义字符" class="headerlink" title="2、简单的转义字符"></a>2、简单的转义字符</h4><p>（1）在字母面前加”\”来代替一些不方便书写的字符，匹配与之相同的一个字符</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>可匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行符</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>制表符</td>
+</tr>
+</tbody>
+</table>
+<p>（2）在有特殊用处的标点符号前加“\”代表该符号本身，匹配与之相同的一个字符</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>可匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>匹配”\”符号本身</td>
+</tr>
+<tr>
+<td>\^</td>
+<td>匹配”^”符号本身</td>
+</tr>
+<tr>
+<td>\\$</td>
+<td>匹配”$”符号本身</td>
+</tr>
+<tr>
+<td>\.</td>
+<td>匹配”.”符号本身</td>
+</tr>
+<tr>
+<td>\(和\)</td>
+<td>匹配”(“和”)”</td>
+</tr>
+<tr>
+<td>\[和\]</td>
+<td>匹配”[“和”]”</td>
+</tr>
+<tr>
+<td>\{和\}</td>
+<td>匹配”{“和”}”</td>
+</tr>
+<tr>
+<td>\?</td>
+<td>匹配”?”符号本身</td>
+</tr>
+<tr>
+<td>\+</td>
+<td>匹配”+”符号本身</td>
+</tr>
+<tr>
+<td>\*</td>
+<td>匹配”*”符号本身</td>
+</tr>
+<tr>
+<td>\</td>
+<td></td>
+<td>匹配”</td>
+<td>“符号本身</td>
+</tr>
+</tbody>
+</table>
+<p>（3）匹配“多种字符”中任意一个字符的表达式</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>可匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\d</td>
+<td>任意一个数字:0~9中任意一个</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配所有非数字字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>任意一个字母数字或下划线：a~z、A~Z、0~9、_中任意一个</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配所有字母、数字、下划线以外的字符</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>包括空格、制表符、换页符在内的空白字符中的任意一个</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配所有非空白字符</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除了换行符（\n）以外的任意一个字符</td>
+</tr>
+</tbody>
+</table>
+<p>（4）使用[]自定义能够匹配多种字符的表达式</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>可匹配</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[]包含一系列字符</td>
+<td>匹配[]中包含的任意一个字符</td>
+<td><code>[ab23@]</code>：可匹配a、b、2、3、@中任意一个字符；<br>[a-g]：匹配a到g之间的任意一个字符</td>
+</tr>
+<tr>
+<td>[^]包含一系列字符</td>
+<td>匹配[]以外的任意一个字符</td>
+<td><code>[^ab23@]</code>：匹配除了a、b、2、3、@意外的所有字符中的一个；<br><code>[^C-H3-7]</code>：匹配”C~H”、”3~7”之外的任意一个字符</td>
+</tr>
+</tbody>
+</table>
+<p>（5）修饰匹配次数的特殊符号</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>作用</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{n}</td>
+<td>表达式重复n次</td>
+<td><code>a{2}</code>相当于<code>aa</code></td>
+</tr>
+<tr>
+<td>{m，n}</td>
+<td>表达式至少重复m次，最多重复n次</td>
+<td><code>ab{2,3}</code>相当于<code>abb</code>或者<code>abbb</code></td>
+</tr>
+<tr>
+<td>{m,}</td>
+<td>表达式至少重复m次</td>
+<td><code>\w\d{2,}</code>可以匹配<code>a12</code>,<code>b23</code>,<code>c345</code>,<code>d4567</code>,…</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配表达式0次或者1次</td>
+<td><code>a[bc]?</code>可以匹配<code>ab</code>或者<code>ac</code>或者<code>a</code></td>
+</tr>
+<tr>
+<td>+</td>
+<td>表达式至少出现一次</td>
+<td><code>a+b</code>可以匹配<code>ab</code>，<code>aab</code>，<code>aaab</code>，…</td>
+</tr>
+<tr>
+<td>*</td>
+<td>表达式不出现或者出现任意次</td>
+<td><code>a*b</code>可以匹配<code>b</code>,<code>ab</code>,<code>aab</code>,<code>aaab</code>,…</td>
+</tr>
+</tbody>
+</table>
+<p>（6）代表抽象意义的特殊符号</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>作用</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>^</td>
+<td>与字符串开始的地方匹配，不匹配任何字符</td>
+<td><code>^aa</code>只能匹配在字符串开头的<code>aa</code></td>
+</tr>
+<tr>
+<td>$</td>
+<td>与字符串结束的地方匹配，不匹配任何字符</td>
+<td><code>zzz$</code>只能匹配位于字符串结尾处的<code>zzz</code></td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配一个单词的边界</td>
+<td><code>.\b</code>在匹配<code>#@#abc</code>时匹配到的内容是<code>#a</code>；<code>\b</code>本身不匹配任何字符，但是它要求在它在匹配结果中所处的位置一边是<code>\w</code>一边是非<code>\w</code></td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配非单词边界</td>
+<td>即左右两边都是<code>\w</code>或者左右两边都不是<code>\w</code></td>
+</tr>
+<tr>
+<td>\</td>
+<td></td>
+<td>左右表达式之间是“或”的关系，匹配左边或者右边</td>
+<td>`a\</td>
+<td>b<code>可以匹配</code>a<code>或者</code>b`</td>
+</tr>
+<tr>
+<td>()</td>
+<td>1、在修饰匹配次数时在，整个括号表达式作为一个整体；<br>2、取匹配结果的时候，括号中的表达式可以被单独得到</td>
+<td>1、<code>(abc){2}</code>匹配<code>abcabc</code>；</td>
+</tr>
+</tbody>
+</table>
+<p>若希望（）括号表达式匹配的结果不进行记录，可以使用<code>(?:xxxxx)</code>形式</p>
+<hr>
+<h3 id="正则表达式高级规则"><a href="#正则表达式高级规则" class="headerlink" title="正则表达式高级规则"></a>正则表达式高级规则</h3><h4 id="1、匹配次数的贪婪与非贪婪"><a href="#1、匹配次数的贪婪与非贪婪" class="headerlink" title="1、匹配次数的贪婪与非贪婪"></a>1、匹配次数的贪婪与非贪婪</h4><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>效果</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>贪婪模式</td>
+<td>尽可能“要匹配”</td>
+<td>eg:<code>(d)(\s+)</code></td>
+</tr>
+<tr>
+<td>非贪婪模式</td>
+<td>尽可能“不匹配”</td>
+<td>在修饰匹配次数的特殊符号后再加上一个 “?” 号<br>eg:<code>(d)(\s+?)</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="2、反向引用"><a href="#2、反向引用" class="headerlink" title="2、反向引用"></a>2、反向引用</h4><p>表达式在匹配时，小括号 “( )” 包含的表达式所匹配到的字符串也会被记录下来【括号表达式的第二个作用】。<br>可以通过在“\”后面接一个数字，引用前面的括号匹配到的字符串。eg:<code>\1</code>匹配的是第一对括号内匹配的字符串，<code>\2</code>匹配的是第2对括号内匹配到的字符串,以此类推。【括号的排序按左括号”(“为准】</p>
+<h4 id="3、预搜索-amp-amp-反向搜索"><a href="#3、预搜索-amp-amp-反向搜索" class="headerlink" title="3、预搜索&amp;&amp;反向搜索"></a>3、预搜索&amp;&amp;反向搜索</h4><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>表达式</th>
+<th>匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预搜索</td>
+<td><code>(?=xxxx)</code><br><code>(?!xxxx)</code></td>
+<td>所在缝隙<strong>右边</strong>必须能够匹配xxxx这部分表达式【xxxx不在匹配的表达式范围内】<br>所在缝隙右边必须<strong>不能</strong>匹配xxxx这部分表达式</td>
+</tr>
+<tr>
+<td>反向预搜索</td>
+<td><code>(?&lt;=xxxx)</code><br><code>(?&lt;\!xxxx)</code></td>
+<td>所在缝隙<strong>左边</strong>必须能够匹配xxxx这部分表达式<br>所在缝隙左边必须<strong>不能</strong>匹配xxxx这部分表达式</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="其他通用规则"><a href="#其他通用规则" class="headerlink" title="其他通用规则"></a>其他通用规则</h3><table>
+<thead>
+<tr>
+<th>形式</th>
+<th>可匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\xXX</td>
+<td>匹配ASCII码编号在0~255范围的字符。eg:\x21代表”!”</td>
+</tr>
+<tr>
+<td>\uXX</td>
+<td>匹配任何字符</td>
+</tr>
+</tbody>
+</table>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jekyll</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/02/22/2017-02-22-js-regularExpressions/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/04/16/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -230,9 +642,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
