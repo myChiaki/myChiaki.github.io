@@ -266,12 +266,24 @@
 <div class="page-modal wx-share js-wx-box">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
+    <!-- <div class="wx-qrcode">
       <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/16/hello-world/" alt="微信分享二维码">
-    </div>
+    </div> -->
+    <div id="js-wx-box"></div>
 </div>
 
 <div class="mask js-mask"></div>
+<script src="//static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+<script>
+  var sUrl = window.location.href.replace(/index\.html$/, '');
+  sUrl = /^(http:|https:)\/\//.test(sUrl) ? sUrl : 'http:' + sUrl
+  var qrcode = new QRCode(document.getElementById("js-wx-box"), {
+	  text: sUrl,
+    width : 144,
+    height : 144
+  })
+  console.log(qrcode)
+</script>
       
       <div class="clearfix"></div>
     </div>
@@ -426,6 +438,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像去雾</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
@@ -434,19 +450,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像去雾</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jekyll</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">源码分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jekyll</a>
               </li>
             
             <div class="clearfix"></div>
