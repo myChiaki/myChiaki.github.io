@@ -122,12 +122,18 @@
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           src += '.jpg';
 
+          // liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">\
+          //       <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
+          //         <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
+          //       </a>\
+          //       <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
+          //   </figure>';
           liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">\
-                <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
-                  <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
-                </a>\
-                <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
-            </figure>';
+          <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
+            <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="' + minSrc + '" itemprop="thumbnail" onload="lzld(this)">\
+          </a>\
+          <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
+      </figure>';
         }
         ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '<em>' + data.month + '月</em></h1>\
         <ul class="img-box-ul">' + liTmpl + '</ul>\
