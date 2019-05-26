@@ -152,6 +152,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2019-05-26-vue3+ie10compatible" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/26/2019-05-26-vue3+ie10compatible/">vue3+ ie10以上兼容处理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/26/2019-05-26-vue3+ie10compatible/" class="archive-article-date">
+  	<time datetime="2019-05-26T13:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、安装-babel-polyfill"><a href="#1、安装-babel-polyfill" class="headerlink" title="1、安装 @babel/polyfill"></a>1、安装 @babel/polyfill</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add @babel/polyfill</span><br></pre></td></tr></table></figure>
+<h3 id="2、babel-config-js"><a href="#2、babel-config-js" class="headerlink" title="2、babel.config.js"></a>2、babel.config.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  presets: [</span><br><span class="line">    &apos;@vue/app&apos;,</span><br><span class="line">    [</span><br><span class="line">      &apos;@vue/app&apos;,</span><br><span class="line">      &#123;</span><br><span class="line">        polyfills: [</span><br><span class="line">          &apos;es6.promise&apos;,</span><br><span class="line">          &apos;es6.symbol&apos;</span><br><span class="line">        ],</span><br><span class="line">        useBuiltIns: &apos;entry&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &apos;@babel/preset-env&apos;</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
+<h3 id="3、main-js"><a href="#3、main-js" class="headerlink" title="3、main.js"></a>3、main.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &apos;@babel/polyfill&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="4、vue-config-js"><a href="#4、vue-config-js" class="headerlink" title="4、vue.config.js"></a>4、vue.config.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  transpileDependencies: [] // 在此配置使用到的不兼容ie的依赖包，会对该以来同时开启语法语法转换和根据使用情况检测 polyfill</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a href="https://cli.vuejs.org/zh/guide/browser-compatibility.html" target="_blank" rel="noopener">https://cli.vuejs.org/zh/guide/browser-compatibility.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ie</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/26/2019-05-26-vue3+ie10compatible/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2017-foodTimeInXiamen" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -165,7 +247,7 @@
 
         
         <a href="/2019/04/20/2017-foodTimeInXiamen/" class="archive-article-date">
-  	<time datetime="2019-04-20T02:27:49.175Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
+  	<time datetime="2019-04-20T02:27:49.176Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
 </a>
         
       </header>
@@ -245,7 +327,7 @@
 
         
         <a href="/2019/04/17/jQuery01/" class="archive-article-date">
-  	<time datetime="2019-04-17T15:38:14.632Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
+  	<time datetime="2019-04-17T15:38:14.633Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
 </a>
         
       </header>
@@ -402,7 +484,7 @@
 
         
         <a href="/2019/04/16/hello-world/" class="archive-article-date">
-  	<time datetime="2019-04-16T14:01:42.175Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
+  	<time datetime="2019-04-16T14:01:42.176Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
 </a>
         
       </header>
@@ -1040,15 +1122,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jekyll</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">源码分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jekyll</a>
               </li>
             
             <div class="clearfix"></div>
