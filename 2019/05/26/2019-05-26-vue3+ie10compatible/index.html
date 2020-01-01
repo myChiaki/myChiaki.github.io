@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue3+ ie10以上兼容处理 | 千秋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、安装 @babel/polyfill1yarn add @babel/polyfill 2、babel.config.js123456789101112131415module.exports = &amp;#123;  presets: [    &amp;apos;@vue/app&amp;apos;,    [      &amp;apos;@vue/app&amp;apos;,      &amp;#123;        poly">
+  <meta name="description" content="1、安装 @babel/polyfill1yarn add @babel/polyfill">
 <meta name="keywords" content="vue,ie">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue3+ ie10以上兼容处理">
 <meta property="og:url" content="http://yoursite.com/2019/05/26/2019-05-26-vue3+ie10compatible/index.html">
 <meta property="og:site_name" content="千秋">
-<meta property="og:description" content="1、安装 @babel/polyfill1yarn add @babel/polyfill 2、babel.config.js123456789101112131415module.exports = &amp;#123;  presets: [    &amp;apos;@vue/app&amp;apos;,    [      &amp;apos;@vue/app&amp;apos;,      &amp;#123;        poly">
+<meta property="og:description" content="1、安装 @babel/polyfill1yarn add @babel/polyfill">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-26T13:20:27.047Z">
+<meta property="og:updated_time" content="2020-01-01T07:53:23.404Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue3+ ie10以上兼容处理">
-<meta name="twitter:description" content="1、安装 @babel/polyfill1yarn add @babel/polyfill 2、babel.config.js123456789101112131415module.exports = &amp;#123;  presets: [    &amp;apos;@vue/app&amp;apos;,    [      &amp;apos;@vue/app&amp;apos;,      &amp;#123;        poly">
+<meta name="twitter:description" content="1、安装 @babel/polyfill1yarn add @babel/polyfill">
   
     <link rel="alternative" href="/atom.xml" title="千秋" type="application/atom+xml">
   
@@ -176,6 +176,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1、安装-babel-polyfill"><a href="#1、安装-babel-polyfill" class="headerlink" title="1、安装 @babel/polyfill"></a>1、安装 @babel/polyfill</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add @babel/polyfill</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="2、babel-config-js"><a href="#2、babel-config-js" class="headerlink" title="2、babel.config.js"></a>2、babel.config.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  presets: [</span><br><span class="line">    &apos;@vue/app&apos;,</span><br><span class="line">    [</span><br><span class="line">      &apos;@vue/app&apos;,</span><br><span class="line">      &#123;</span><br><span class="line">        polyfills: [</span><br><span class="line">          &apos;es6.promise&apos;,</span><br><span class="line">          &apos;es6.symbol&apos;</span><br><span class="line">        ],</span><br><span class="line">        useBuiltIns: &apos;entry&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &apos;@babel/preset-env&apos;</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
 <h3 id="3、main-js"><a href="#3、main-js" class="headerlink" title="3、main.js"></a>3、main.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &apos;@babel/polyfill&apos;</span><br></pre></td></tr></table></figure>
 <h3 id="4、vue-config-js"><a href="#4、vue-config-js" class="headerlink" title="4、vue.config.js"></a>4、vue.config.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  transpileDependencies: [] // 在此配置使用到的不兼容ie的依赖包，会对该以来同时开启语法语法转换和根据使用情况检测 polyfill</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

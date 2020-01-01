@@ -253,11 +253,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1、安装-babel-polyfill"><a href="#1、安装-babel-polyfill" class="headerlink" title="1、安装 @babel/polyfill"></a>1、安装 @babel/polyfill</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add @babel/polyfill</span><br></pre></td></tr></table></figure>
-<h3 id="2、babel-config-js"><a href="#2、babel-config-js" class="headerlink" title="2、babel.config.js"></a>2、babel.config.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  presets: [</span><br><span class="line">    &apos;@vue/app&apos;,</span><br><span class="line">    [</span><br><span class="line">      &apos;@vue/app&apos;,</span><br><span class="line">      &#123;</span><br><span class="line">        polyfills: [</span><br><span class="line">          &apos;es6.promise&apos;,</span><br><span class="line">          &apos;es6.symbol&apos;</span><br><span class="line">        ],</span><br><span class="line">        useBuiltIns: &apos;entry&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &apos;@babel/preset-env&apos;</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
-<h3 id="3、main-js"><a href="#3、main-js" class="headerlink" title="3、main.js"></a>3、main.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &apos;@babel/polyfill&apos;</span><br></pre></td></tr></table></figure>
-<h3 id="4、vue-config-js"><a href="#4、vue-config-js" class="headerlink" title="4、vue.config.js"></a>4、vue.config.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  transpileDependencies: [] // 在此配置使用到的不兼容ie的依赖包，会对该以来同时开启语法语法转换和根据使用情况检测 polyfill</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a href="https://cli.vuejs.org/zh/guide/browser-compatibility.html" target="_blank" rel="noopener">https://cli.vuejs.org/zh/guide/browser-compatibility.html</a></p>
-
+        
+          <a class="article-more-a" href="/2019/05/26/2019-05-26-vue3+ie10compatible/#more">more >></a>
+        
       
 
       
@@ -573,14 +571,9 @@
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        
+          <a class="article-more-a" href="/2019/04/16/hello-world/#more">more >></a>
+        
       
 
       
@@ -651,22 +644,9 @@
 <li><strong>全球大气光</strong></li>
 <li><strong>透射率估计</strong></li>
 </ul>
-<hr>
-<h2 id="基于暗通道图像去雾算法的改进"><a href="#基于暗通道图像去雾算法的改进" class="headerlink" title="基于暗通道图像去雾算法的改进"></a>基于暗通道图像去雾算法的改进</h2><ul>
-<li><strong>光晕区域的分离与消除</strong></li>
-<li><strong>基于透射率阈值明亮区域的分离方法</strong></li>
-<li><strong>明亮区域透射率的修正</strong></li>
-<li><strong>亮度增强</strong></li>
-</ul>
-<hr>
-<h2 id="实验结果与分析"><a href="#实验结果与分析" class="headerlink" title="实验结果与分析"></a>实验结果与分析</h2><ul>
-<li><strong>光晕区域的分离与消除</strong></li>
-<li><strong>基于透射率阈值明亮区域的分离方法</strong></li>
-<li><strong>明亮区域透射率的修正</strong></li>
-<li><strong>亮度增强</strong></li>
-</ul>
-<p>—— 千秋 记于 2017.10</p>
-
+        
+          <a class="article-more-a" href="/2017/10/09/2017-10-09-ResearchAndImprovementofImageDehazingBasedonDarkChannel/#more">more >></a>
+        
       
 
       
@@ -741,298 +721,9 @@
       
         <h3 id="正则表达式基本规则"><a href="#正则表达式基本规则" class="headerlink" title="正则表达式基本规则"></a>正则表达式基本规则</h3><h4 id="1、普通字符"><a href="#1、普通字符" class="headerlink" title="1、普通字符"></a>1、普通字符</h4><p>包括：字母、数字、汉字、下划线、没有特殊定义的标点符号。<br>（在匹配一个字符串时，匹配与之相同的一个字符）</p>
 <hr>
-<h4 id="2、简单的转义字符"><a href="#2、简单的转义字符" class="headerlink" title="2、简单的转义字符"></a>2、简单的转义字符</h4><p>（1）在字母面前加”\”来代替一些不方便书写的字符，匹配与之相同的一个字符</p>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>可匹配</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\r</td>
-<td>回车</td>
-</tr>
-<tr>
-<td>\n</td>
-<td>换行符</td>
-</tr>
-<tr>
-<td>\t</td>
-<td>制表符</td>
-</tr>
-</tbody>
-</table>
-<p>（2）在有特殊用处的标点符号前加“\”代表该符号本身，匹配与之相同的一个字符</p>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>可匹配</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\</td>
-<td>匹配”\”符号本身</td>
-</tr>
-<tr>
-<td>\^</td>
-<td>匹配”^”符号本身</td>
-</tr>
-<tr>
-<td>\\$</td>
-<td>匹配”$”符号本身</td>
-</tr>
-<tr>
-<td>\.</td>
-<td>匹配”.”符号本身</td>
-</tr>
-<tr>
-<td>\(和\)</td>
-<td>匹配”(“和”)”</td>
-</tr>
-<tr>
-<td>\[和\]</td>
-<td>匹配”[“和”]”</td>
-</tr>
-<tr>
-<td>\{和\}</td>
-<td>匹配”{“和”}”</td>
-</tr>
-<tr>
-<td>\?</td>
-<td>匹配”?”符号本身</td>
-</tr>
-<tr>
-<td>\+</td>
-<td>匹配”+”符号本身</td>
-</tr>
-<tr>
-<td>\*</td>
-<td>匹配”*”符号本身</td>
-</tr>
-<tr>
-<td>\</td>
-<td></td>
-<td>匹配”</td>
-<td>“符号本身</td>
-</tr>
-</tbody>
-</table>
-<p>（3）匹配“多种字符”中任意一个字符的表达式</p>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>可匹配</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\d</td>
-<td>任意一个数字:0~9中任意一个</td>
-</tr>
-<tr>
-<td>\D</td>
-<td>匹配所有非数字字符</td>
-</tr>
-<tr>
-<td>\w</td>
-<td>任意一个字母数字或下划线：a~z、A~Z、0~9、_中任意一个</td>
-</tr>
-<tr>
-<td>\W</td>
-<td>匹配所有字母、数字、下划线以外的字符</td>
-</tr>
-<tr>
-<td>\s</td>
-<td>包括空格、制表符、换页符在内的空白字符中的任意一个</td>
-</tr>
-<tr>
-<td>\S</td>
-<td>匹配所有非空白字符</td>
-</tr>
-<tr>
-<td>.</td>
-<td>匹配除了换行符（\n）以外的任意一个字符</td>
-</tr>
-</tbody>
-</table>
-<p>（4）使用[]自定义能够匹配多种字符的表达式</p>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>可匹配</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[]包含一系列字符</td>
-<td>匹配[]中包含的任意一个字符</td>
-<td><code>[ab23@]</code>：可匹配a、b、2、3、@中任意一个字符；<br>[a-g]：匹配a到g之间的任意一个字符</td>
-</tr>
-<tr>
-<td>[^]包含一系列字符</td>
-<td>匹配[]以外的任意一个字符</td>
-<td><code>[^ab23@]</code>：匹配除了a、b、2、3、@意外的所有字符中的一个；<br><code>[^C-H3-7]</code>：匹配”C~H”、”3~7”之外的任意一个字符</td>
-</tr>
-</tbody>
-</table>
-<p>（5）修饰匹配次数的特殊符号</p>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>作用</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>{n}</td>
-<td>表达式重复n次</td>
-<td><code>a{2}</code>相当于<code>aa</code></td>
-</tr>
-<tr>
-<td>{m，n}</td>
-<td>表达式至少重复m次，最多重复n次</td>
-<td><code>ab{2,3}</code>相当于<code>abb</code>或者<code>abbb</code></td>
-</tr>
-<tr>
-<td>{m,}</td>
-<td>表达式至少重复m次</td>
-<td><code>\w\d{2,}</code>可以匹配<code>a12</code>,<code>b23</code>,<code>c345</code>,<code>d4567</code>,…</td>
-</tr>
-<tr>
-<td>?</td>
-<td>匹配表达式0次或者1次</td>
-<td><code>a[bc]?</code>可以匹配<code>ab</code>或者<code>ac</code>或者<code>a</code></td>
-</tr>
-<tr>
-<td>+</td>
-<td>表达式至少出现一次</td>
-<td><code>a+b</code>可以匹配<code>ab</code>，<code>aab</code>，<code>aaab</code>，…</td>
-</tr>
-<tr>
-<td>*</td>
-<td>表达式不出现或者出现任意次</td>
-<td><code>a*b</code>可以匹配<code>b</code>,<code>ab</code>,<code>aab</code>,<code>aaab</code>,…</td>
-</tr>
-</tbody>
-</table>
-<p>（6）代表抽象意义的特殊符号</p>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>作用</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>^</td>
-<td>与字符串开始的地方匹配，不匹配任何字符</td>
-<td><code>^aa</code>只能匹配在字符串开头的<code>aa</code></td>
-</tr>
-<tr>
-<td>$</td>
-<td>与字符串结束的地方匹配，不匹配任何字符</td>
-<td><code>zzz$</code>只能匹配位于字符串结尾处的<code>zzz</code></td>
-</tr>
-<tr>
-<td>\b</td>
-<td>匹配一个单词的边界</td>
-<td><code>.\b</code>在匹配<code>#@#abc</code>时匹配到的内容是<code>#a</code>；<code>\b</code>本身不匹配任何字符，但是它要求在它在匹配结果中所处的位置一边是<code>\w</code>一边是非<code>\w</code></td>
-</tr>
-<tr>
-<td>\B</td>
-<td>匹配非单词边界</td>
-<td>即左右两边都是<code>\w</code>或者左右两边都不是<code>\w</code></td>
-</tr>
-<tr>
-<td>\</td>
-<td></td>
-<td>左右表达式之间是“或”的关系，匹配左边或者右边</td>
-<td>`a\</td>
-<td>b<code>可以匹配</code>a<code>或者</code>b`</td>
-</tr>
-<tr>
-<td>()</td>
-<td>1、在修饰匹配次数时在，整个括号表达式作为一个整体；<br>2、取匹配结果的时候，括号中的表达式可以被单独得到</td>
-<td>1、<code>(abc){2}</code>匹配<code>abcabc</code>；</td>
-</tr>
-</tbody>
-</table>
-<p>若希望（）括号表达式匹配的结果不进行记录，可以使用<code>(?:xxxxx)</code>形式</p>
-<hr>
-<h3 id="正则表达式高级规则"><a href="#正则表达式高级规则" class="headerlink" title="正则表达式高级规则"></a>正则表达式高级规则</h3><h4 id="1、匹配次数的贪婪与非贪婪"><a href="#1、匹配次数的贪婪与非贪婪" class="headerlink" title="1、匹配次数的贪婪与非贪婪"></a>1、匹配次数的贪婪与非贪婪</h4><table>
-<thead>
-<tr>
-<th>模式</th>
-<th>效果</th>
-<th>用法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>贪婪模式</td>
-<td>尽可能“要匹配”</td>
-<td>eg:<code>(d)(\s+)</code></td>
-</tr>
-<tr>
-<td>非贪婪模式</td>
-<td>尽可能“不匹配”</td>
-<td>在修饰匹配次数的特殊符号后再加上一个 “?” 号<br>eg:<code>(d)(\s+?)</code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="2、反向引用"><a href="#2、反向引用" class="headerlink" title="2、反向引用"></a>2、反向引用</h4><p>表达式在匹配时，小括号 “( )” 包含的表达式所匹配到的字符串也会被记录下来【括号表达式的第二个作用】。<br>可以通过在“\”后面接一个数字，引用前面的括号匹配到的字符串。eg:<code>\1</code>匹配的是第一对括号内匹配的字符串，<code>\2</code>匹配的是第2对括号内匹配到的字符串,以此类推。【括号的排序按左括号”(“为准】</p>
-<h4 id="3、预搜索-amp-amp-反向搜索"><a href="#3、预搜索-amp-amp-反向搜索" class="headerlink" title="3、预搜索&amp;&amp;反向搜索"></a>3、预搜索&amp;&amp;反向搜索</h4><table>
-<thead>
-<tr>
-<th>方法名</th>
-<th>表达式</th>
-<th>匹配</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>预搜索</td>
-<td><code>(?=xxxx)</code><br><code>(?!xxxx)</code></td>
-<td>所在缝隙<strong>右边</strong>必须能够匹配xxxx这部分表达式【xxxx不在匹配的表达式范围内】<br>所在缝隙右边必须<strong>不能</strong>匹配xxxx这部分表达式</td>
-</tr>
-<tr>
-<td>反向预搜索</td>
-<td><code>(?&lt;=xxxx)</code><br><code>(?&lt;\!xxxx)</code></td>
-<td>所在缝隙<strong>左边</strong>必须能够匹配xxxx这部分表达式<br>所在缝隙左边必须<strong>不能</strong>匹配xxxx这部分表达式</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h3 id="其他通用规则"><a href="#其他通用规则" class="headerlink" title="其他通用规则"></a>其他通用规则</h3><table>
-<thead>
-<tr>
-<th>形式</th>
-<th>可匹配</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\xXX</td>
-<td>匹配ASCII码编号在0~255范围的字符。eg:\x21代表”!”</td>
-</tr>
-<tr>
-<td>\uXX</td>
-<td>匹配任何字符</td>
-</tr>
-</tbody>
-</table>
-
+        
+          <a class="article-more-a" href="/2017/02/22/2017-02-22-js-regularExpressions/#more">more >></a>
+        
       
 
       
