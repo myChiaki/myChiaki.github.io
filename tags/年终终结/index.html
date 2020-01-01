@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>jQuery 源码分析——属性操作模块 | 千秋</title>
+  <title>Tag: 年终终结 | 千秋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="（一）对jQuery源码中对属性操作的模块进行抽取如下：（1）扩展实例方法1234567891011jQuery.fn.extend(&amp;#123;  attr       //调用工具方法中的 jQuery.attr  removeAttr //调用工具方法中的 jQuery.removeAttr  prop       //调用工具方法中的 jQuery.prop  removeProp  ad">
-<meta name="keywords" content="jQuery,源码分析">
-<meta property="og:type" content="article">
-<meta property="og:title" content="jQuery 源码分析——属性操作模块">
-<meta property="og:url" content="http://yoursite.com/2019/04/17/jQuery01/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="千秋">
+<meta property="og:url" content="http://yoursite.com/tags/年终终结/index.html">
 <meta property="og:site_name" content="千秋">
-<meta property="og:description" content="（一）对jQuery源码中对属性操作的模块进行抽取如下：（1）扩展实例方法1234567891011jQuery.fn.extend(&amp;#123;  attr       //调用工具方法中的 jQuery.attr  removeAttr //调用工具方法中的 jQuery.removeAttr  prop       //调用工具方法中的 jQuery.prop  removeProp  ad">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-02-12T09:21:47.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery 源码分析——属性操作模块">
-<meta name="twitter:description" content="（一）对jQuery源码中对属性操作的模块进行抽取如下：（1）扩展实例方法1234567891011jQuery.fn.extend(&amp;#123;  attr       //调用工具方法中的 jQuery.attr  removeAttr //调用工具方法中的 jQuery.removeAttr  prop       //调用工具方法中的 jQuery.prop  removeProp  ad">
+<meta name="twitter:title" content="千秋">
   
     <link rel="alternative" href="/atom.xml" title="千秋" type="application/atom+xml">
   
@@ -155,328 +150,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jQuery01" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      jQuery 源码分析——属性操作模块
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/01/01/2020-01-01-2019End/" class="archive-article-date">
+  	<time datetime="2020-01-01T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-01</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/01/01/2020-01-01-2019End/">2019 年终。</a>
     </h1>
   
 
-        
-        <a href="/2019/04/17/jQuery01/" class="archive-article-date">
-  	<time datetime="2019-04-17T15:38:14.633Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="（一）对jQuery源码中对属性操作的模块进行抽取如下："><a href="#（一）对jQuery源码中对属性操作的模块进行抽取如下：" class="headerlink" title="（一）对jQuery源码中对属性操作的模块进行抽取如下："></a>（一）对jQuery源码中对属性操作的模块进行抽取如下：</h4><h5 id="（1）扩展实例方法"><a href="#（1）扩展实例方法" class="headerlink" title="（1）扩展实例方法"></a>（1）扩展实例方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">jQuery.fn.extend(&#123;</span><br><span class="line">  attr       //调用工具方法中的 jQuery.attr</span><br><span class="line">  removeAttr //调用工具方法中的 jQuery.removeAttr</span><br><span class="line">  prop       //调用工具方法中的 jQuery.prop</span><br><span class="line">  removeProp</span><br><span class="line">  addClass</span><br><span class="line">  removeClass</span><br><span class="line">  toggleClass</span><br><span class="line">  hasClass</span><br><span class="line">  val</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h5 id="（2）扩展工具方法"><a href="#（2）扩展工具方法" class="headerlink" title="（2）扩展工具方法"></a>（2）扩展工具方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">jQuery.extend(&#123;</span><br><span class="line">  valHooks</span><br><span class="line">  attr</span><br><span class="line">  removeAttr</span><br><span class="line">  attrHooks</span><br><span class="line">  propFix</span><br><span class="line">  prop</span><br><span class="line">  propHooks</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>工具方法通常在内部使用，外部使用的多为实例方法。</p>
-<hr>
-<h4 id="（二）下面对实例方法进行分析"><a href="#（二）下面对实例方法进行分析" class="headerlink" title="（二）下面对实例方法进行分析"></a>（二）下面对实例方法进行分析</h4><h5 id="（1）attr-、prop-和removeAttr-和removeProp"><a href="#（1）attr-、prop-和removeAttr-和removeProp" class="headerlink" title="（1）attr()、prop()和removeAttr()和removeProp()"></a>（1）attr()、prop()和removeAttr()和removeProp()</h5><table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>作用</th>
-<th>基本使用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>attr()</td>
-<td>用于设置或获取当前jQuery对象所匹配的元素节点的属性</td>
-<td><code>$(&quot;#div1&quot;).attr(&quot;title&quot;,&quot;hello&quot;);// 设置title的属性值   $(&quot;#div1&quot;).attr(title); // 获取title的属性值</code></td>
-</tr>
-<tr>
-<td>prop()</td>
-<td>用于设置或获取当前jQuery对象所匹配的元素的属性</td>
-<td><code>$(&quot;#div1&quot;).prop(&quot;title&quot;,&quot;hello&quot;);// 设置title的属性值$(&quot;#div1&quot;).prop(title);// 获取title的属性值</code></td>
-</tr>
-<tr>
-<td>removeAttr()</td>
-<td>用于删除当前jQuery对象所匹配的元素节点的属性</td>
-<td><code>$(&quot;#div1&quot;).removeAttr();//删除全部属性$(&quot;#div1&quot;).removeAttr(&quot;title&quot;);//删除title属性</code></td>
-</tr>
-<tr>
-<td>removeProp()</td>
-<td>用于删除当前jQuery对象所匹配的元素的属性</td>
-<td><code>$(&quot;#div1&quot;).removeProp();//删除全部属性$(&quot;#div1&quot;).removeProp(&quot;title&quot;);//删除title属性</code></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><strong>attr()与prop()联系与区别</strong></p>
-<p><strong><em>联系</em>：</strong><br>当有两个参数或者当有一个参数且参数类型是键值对对象时，为设置属性操作；<br>当有只有一个非对象的参数时，为获取属性操作。</p>
-<p><strong><em>区别</em>：</strong><br><code>attr()</code>： 可以通过setAttribute和getAttribute进行获取和设置,其操作对象是HTML节点的属性；<br><code>prop()</code>： 可以通过“.”或”[]”进行获取和设置，其操作对象是js对象的属性。<br>由于两者操作的对象不同，因此也导致了<code>attr（）</code>设置的属性可以添加到标签中，而用<code>prop()</code>设置的属性则不行。</p>
-<p>对于<code>&lt;a&gt;</code>中的href属性，<code>attr</code>只能获取到<code>href</code>中所写的值，而prop获取的是href中所写值的实际地址。</p>
-<p><strong>removeAttr()和removeProp()的区别</strong></p>
-<p><code>removeProp()</code>无法删除标签自带的属性。</p>
-<hr>
-<p><strong>源码分析：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">attr: function( name, value ) &#123;</span><br><span class="line">  return jQuery.access( this, jQuery.attr, name,value, arguments.length &gt; 1 );</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">prop: function( name, value ) &#123;</span><br><span class="line">  return jQuery.access( this, jQuery.prop, name, value, arguments.length &gt; 1 );</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">removeAttr: function( name ) &#123;</span><br><span class="line">  return this.each(function() &#123;</span><br><span class="line">    jQuery.removeAttr( this, name );</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">removeProp: function( name ) &#123;</span><br><span class="line">  return this.each(function() &#123;//遍历每一个元素</span><br><span class="line">    delete this[ jQuery.propFix[ name ] || name ];//删除对应的属性</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">removeProp: function( name ) &#123;</span><br><span class="line">  return this.each(function() &#123;</span><br><span class="line">    delete this[ jQuery.propFix[ name ] || name ];</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p>观察上面的代码发现，<code>attr()</code>调用了工具方法中的<code>$.attr()</code>，<code>prop()</code>方法调用了工具方法中的<code>$.prop()</code>，<code>removeAttr()</code>调用了工具方法中的<code>$.removeAttr()</code>方法。</p>
-<p>于是转而看工具方法<code>$.attr(）</code>和<code>$.prop()</code>和<code>$.removeAttr()</code>的源码：</p>
-<p><strong>$.attr()</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">attr: function( elem, name, value ) &#123;</span><br><span class="line">  // elems: 页面操作的元素</span><br><span class="line">  // name:  key值</span><br><span class="line">  // value：value值</span><br><span class="line">  // eg: $(&quot;#div1&quot;).attr(&quot;title&quot;,&quot;test&quot;);//elems:$(&quot;#div1&quot;),name:&quot;title&quot;,value:&quot;test&quot;</span><br><span class="line">  var hooks, ret,</span><br><span class="line">    nType = elem.nodeType;// 获取元素的节点类型</span><br><span class="line"></span><br><span class="line">  // don&apos;t get/set attributes on text, comment and attribute nodes</span><br><span class="line">  // 当元素节点类型不存在时</span><br><span class="line">  // 或者元素节点类型为文本、注释、属性时执行return</span><br><span class="line">  if ( !elem || nType === 3 || nType === 8 || nType === 2 ) &#123;</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // Fallback to prop when attributes are not supported</span><br><span class="line">  // 元素不存在getAttribute方法时,使用$.prop()方法来代替</span><br><span class="line">  // $(document).attr(&quot;title&quot;,&quot;hello&quot;);//因为document不存在getAttribute方法</span><br><span class="line">  if ( typeof elem.getAttribute === core_strundefined ) &#123;</span><br><span class="line">    return jQuery.prop( elem, name, value );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // All attributes are lowercase</span><br><span class="line">  // Grab necessary hook if one is defined</span><br><span class="line">  //当节点类型不为元素节点或者不是XML元素节点时</span><br><span class="line">  if ( nType !== 1 || !jQuery.isXMLDoc( elem ) ) &#123;</span><br><span class="line">    //做兼容性处理</span><br><span class="line">    name = name.toLowerCase();// 转小写</span><br><span class="line">    hooks = jQuery.attrHooks[ name ] ||//attrHooks是jq中做兼容检处理的具体方式</span><br><span class="line">      ( jQuery.expr.match.bool.test( name ) ? boolHook : nodeHook );</span><br><span class="line">      //判断是否匹配这些值：checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped</span><br><span class="line">      //nodeHooks相当于undefined</span><br><span class="line">      //boolHooks见下一段代码分析</span><br><span class="line">      //解决$(&quot;input&quot;).attr(&quot;checked&quot;,true)的兼容</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if ( value !== undefined ) &#123; //value不为undefined,为设置</span><br><span class="line"></span><br><span class="line">    if ( value === null ) &#123; //当value为空时，调用removeAttr(),做删除操作</span><br><span class="line">      jQuery.removeAttr( elem, name );</span><br><span class="line"></span><br><span class="line">    &#125; else if ( hooks &amp;&amp; &quot;set&quot; in hooks &amp;&amp; (ret = hooks.set( elem, value, name )) !== undefined ) &#123;</span><br><span class="line">      //返回兼容的值</span><br><span class="line">      return ret;</span><br><span class="line"></span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      elem.setAttribute( name, value + &quot;&quot; );</span><br><span class="line">      return value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125; else if ( hooks &amp;&amp; &quot;get&quot; in hooks &amp;&amp; (ret = hooks.get( elem, name )) !== null ) &#123;</span><br><span class="line">    return ret;</span><br><span class="line"></span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    ret = jQuery.find.attr( elem, name );//获取getAttribute属性值的方法</span><br><span class="line"></span><br><span class="line">    // Non-existent attributes return null, we normalize to undefined</span><br><span class="line">    return ret == null ?</span><br><span class="line">      undefined :</span><br><span class="line">      ret;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p><strong>boolHooks:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">boolHook = &#123;</span><br><span class="line">  set: function( elem, value, name ) &#123;</span><br><span class="line">    if ( value === false ) &#123;</span><br><span class="line">      // Remove boolean attributes when set to false</span><br><span class="line">      jQuery.removeAttr( elem, name );</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      elem.setAttribute( name, name );//设置时属性名和属性值相同</span><br><span class="line">    &#125;</span><br><span class="line">    return name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>attrHooks:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">attrHooks: &#123;</span><br><span class="line">  type: &#123;</span><br><span class="line">    //兼容只针对set</span><br><span class="line">    set: function( elem, value ) &#123;</span><br><span class="line">      //判断单选框</span><br><span class="line">      if ( !jQuery.support.radioValue &amp;&amp; value === &quot;radio&quot; &amp;&amp; jQuery.nodeName(elem, &quot;input&quot;) ) &#123;</span><br><span class="line">        // Setting the type on a radio button after the value resets the value in IE6-9</span><br><span class="line">        // Reset value to default in case type is set after value during creation</span><br><span class="line">        var val = elem.value;</span><br><span class="line">        elem.setAttribute( &quot;type&quot;, value ); //先设置类型</span><br><span class="line">        //再进行赋值</span><br><span class="line">        if ( val ) &#123;</span><br><span class="line">          elem.value = val;</span><br><span class="line">        &#125;</span><br><span class="line">        return value;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>$.removeAttr()：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">removeAttr: function( elem, value ) &#123;</span><br><span class="line">  var name, propName,</span><br><span class="line">    i = 0,</span><br><span class="line">    attrNames = value &amp;&amp; value.match( core_rnotwhite );// 匹配非空格字符串</span><br><span class="line"></span><br><span class="line">  if ( attrNames &amp;&amp; elem.nodeType === 1 ) &#123;</span><br><span class="line">    while ( (name = attrNames[i++]) ) &#123;</span><br><span class="line">      propName = jQuery.propFix[ name ] || name;</span><br><span class="line"></span><br><span class="line">      // Boolean attributes get special treatment (#10870)</span><br><span class="line">      //匹配这些属性checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped</span><br><span class="line">      if ( jQuery.expr.match.bool.test( name ) ) &#123;</span><br><span class="line">        // Set corresponding property to false</span><br><span class="line">        elem[ propName ] = false;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      elem.removeAttribute( name );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p><strong>propFix：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">propFix: &#123;</span><br><span class="line">  // 一些兼容性写法</span><br><span class="line">  &quot;for&quot;: &quot;htmlFor&quot;,</span><br><span class="line">  &quot;class&quot;: &quot;className&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>$.prop()</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">prop: function( elem, name, value ) &#123;</span><br><span class="line">  var ret, hooks, notxml,</span><br><span class="line">    nType = elem.nodeType;</span><br><span class="line"></span><br><span class="line">  // don&apos;t get/set properties on text, comment and attribute nodes</span><br><span class="line">  if ( !elem || nType === 3 || nType === 8 || nType === 2 ) &#123;</span><br><span class="line">    //当元素不存在时或者不是元素节点时，直接过滤掉</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  notxml = nType !== 1 || !jQuery.isXMLDoc( elem );</span><br><span class="line">  //不是元素节点或者不是XML元素节点时</span><br><span class="line">  if ( notxml ) &#123;</span><br><span class="line">    // Fix name and attach hooks</span><br><span class="line">    name = jQuery.propFix[ name ] || name;// 将for和class写成对应的js可以识别的值</span><br><span class="line">    hooks = jQuery.propHooks[ name ];// 对tabIndex进行兼容处理，详见下段源码分析</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if ( value !== undefined ) &#123;</span><br><span class="line">    return hooks &amp;&amp; &quot;set&quot; in hooks &amp;&amp; (ret = hooks.set( elem, value, name )) !== undefined ?</span><br><span class="line">      ret :</span><br><span class="line">      ( elem[ name ] = value );</span><br><span class="line"></span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    return hooks &amp;&amp; &quot;get&quot; in hooks &amp;&amp; (ret = hooks.get( elem, name )) !== null ?</span><br><span class="line">      ret :</span><br><span class="line">      elem[ name ];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p><strong>propHooks</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">propHooks: &#123;</span><br><span class="line">  tabIndex: &#123;</span><br><span class="line">    //设置光标切换顺序</span><br><span class="line">    //eg: &lt;input type=&quot;text&quot; tabIndex=&quot;2&quot;&gt;&lt;input type=&quot;text&quot; tabIndex=&quot;1&quot;&gt;</span><br><span class="line">    get: function( elem ) &#123;</span><br><span class="line">      return elem.hasAttribute( &quot;tabindex&quot; ) || rfocusable.test( elem.nodeName )/*输入框、下拉菜单、文本框、按钮时*/ || elem.href</span><br><span class="line">        elem.tabIndex :</span><br><span class="line">        -1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<hr>
-<h5 id="2-addClass-、removeClass-和toggleClass-和hasClass"><a href="#2-addClass-、removeClass-和toggleClass-和hasClass" class="headerlink" title="(2)addClass()、removeClass()和toggleClass()和hasClass()"></a>(2)addClass()、removeClass()和toggleClass()和hasClass()</h5><table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>作用</th>
-<th>基本使用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>addClass()</td>
-<td>添加类名</td>
-<td><code>$(&quot;#div1&quot;).addClass(&quot;box1 box2 box3&quot;);</code></td>
-</tr>
-<tr>
-<td>removeClass()</td>
-<td>删除类名</td>
-<td><code>$(&quot;#div1&quot;).removeClass(&quot;box1&quot;);//从class中删除.box1  $(&quot;#dov1&quot;).removeClass();//删除该元素所有的class</code></td>
-</tr>
-<tr>
-<td>toggleClass()</td>
-<td>当改类名存在时则删除该类名，当该类名不存在时则添加该类名</td>
-<td><code>$(&quot;#div1&quot;).toggleClass(&quot;box1&quot;);//当原来的class中不存在box1时将box1添加，反之，则将box1删除</code></td>
-</tr>
-<tr>
-<td>hasClass</td>
-<td>判断该类名是否存在</td>
-<td><code>$(&quot;#div1&quot;).hasClass(&quot;box1&quot;);//当元素$(&quot;#div1&quot;)中有box1这个类时，则返回true。否则返回false</code></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><strong>源码分析：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">addClass: function( value ) &#123;</span><br><span class="line">  var classes, elem, cur, clazz, j,</span><br><span class="line">    i = 0,</span><br><span class="line">    len = this.length,//存储对象的长度</span><br><span class="line">    proceed = typeof value === &quot;string&quot; &amp;&amp; value;//当变量类型为字符串时，返回改字符串，否则返回false</span><br><span class="line">    /*</span><br><span class="line">      $(&quot;#div1&quot;).addClass(&quot;box1 box2&quot;);</span><br><span class="line">      $(&quot;#div1&quot;).addClass(function(index)&#123;</span><br><span class="line">        alert(index);</span><br><span class="line">        return &apos;box&apos;+index;</span><br><span class="line">      &#125;)</span><br><span class="line">    */</span><br><span class="line"></span><br><span class="line">  if ( jQuery.isFunction( value ) ) &#123;//判断value是否为函数</span><br><span class="line">    return this.each(function( j ) &#123;</span><br><span class="line">      jQuery( this ).addClass( value.call( this, j, this.className ) );</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if ( proceed ) &#123;//判断value是否为字符串类型</span><br><span class="line">    // The disjunction here is for better compressibility (see removeClass)</span><br><span class="line">    classes = ( value || &quot;&quot; ).match( core_rnotwhite ) || [];//匹配非空格字符串，从而分割成数组</span><br><span class="line"></span><br><span class="line">    for ( ; i &lt; len; i++ ) &#123;</span><br><span class="line">      elem = this[ i ];</span><br><span class="line">      cur = elem.nodeType === 1 &amp;&amp; ( elem.className ?</span><br><span class="line">        ( &quot; &quot; + elem.className + &quot; &quot; ).replace( rclass, &quot; &quot; ) /*将一些空白符用空格替换*/:</span><br><span class="line">        &quot; &quot;</span><br><span class="line">      );//获得之前的className</span><br><span class="line"></span><br><span class="line">      if ( cur ) &#123;</span><br><span class="line">        j = 0;</span><br><span class="line">        while ( (clazz = classes[j++]) ) &#123;</span><br><span class="line">          if ( cur.indexOf( &quot; &quot; + clazz + &quot; &quot; ) &lt; 0 ) &#123;</span><br><span class="line">            cur += clazz + &quot; &quot;;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;//当不添加的类名不存在时再添加</span><br><span class="line">        elem.className = jQuery.trim( cur );//去掉前后空格</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return this;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">removeClass: function( value ) &#123;</span><br><span class="line">  var classes, elem, cur, clazz, j,</span><br><span class="line">    i = 0,</span><br><span class="line">    len = this.length,// 存储对象的长度</span><br><span class="line">    // &amp;&amp;优先级高于||</span><br><span class="line">    // 于是先判断value是否为字符串类型以及value是否有值</span><br><span class="line">    // 再判断参数的个数是否为0，eg: $(&quot;#div1&quot;).removeClass()删除当前元素的所有class</span><br><span class="line">    proceed = arguments.length === 0 || typeof value === &quot;string&quot; &amp;&amp; value;</span><br><span class="line"></span><br><span class="line">  if ( jQuery.isFunction( value ) ) &#123;</span><br><span class="line">    return this.each(function( j ) &#123;</span><br><span class="line">      jQuery( this ).removeClass( value.call( this, j, this.className ) );</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  if ( proceed ) &#123;</span><br><span class="line">    classes = ( value || &quot;&quot; ).match( core_rnotwhite ) || [];//匹配非空格字符串进行分解操作</span><br><span class="line"></span><br><span class="line">    for ( ; i &lt; len; i++ ) &#123;</span><br><span class="line">      elem = this[ i ];</span><br><span class="line">      // This expression is here for better compressibility (see addClass)</span><br><span class="line">      cur = elem.nodeType === 1 &amp;&amp; ( elem.className ?</span><br><span class="line">        ( &quot; &quot; + elem.className + &quot; &quot; ).replace( rclass, &quot; &quot; )/*用空格代替\t\r\n\f这些符号*/ :</span><br><span class="line">        &quot;&quot;</span><br><span class="line">      );</span><br><span class="line"></span><br><span class="line">      if ( cur ) &#123;</span><br><span class="line">        j = 0;</span><br><span class="line">        while ( (clazz = classes[j++]) ) &#123;</span><br><span class="line">          // Remove *all* instances</span><br><span class="line">          while ( cur.indexOf( &quot; &quot; + clazz + &quot; &quot; ) &gt;= 0 ) &#123;// 当当前的class与原来的class相匹配时，就从原来的class中删除当前的class</span><br><span class="line">            cur = cur.replace( &quot; &quot; + clazz + &quot; &quot;, &quot; &quot; );</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        elem.className = value ? jQuery.trim( cur ) : &quot;&quot;;// 当value有值，即有传参进来时，对处理完的元素类名进行去掉左右空格处理，否则当前元素类名直接置为空</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return this;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">toggleClass: function( value, stateVal ) &#123;</span><br><span class="line">  // value: 待添加或待删除的类名</span><br><span class="line">  // stateVal: 为true时,相当于addClass;为false时,相当于removeClass</span><br><span class="line">  var type = typeof value;</span><br><span class="line"></span><br><span class="line">  //判断第二个参数的类型是否为布尔型以及第一个参数类型是否为字符串</span><br><span class="line">  if ( typeof stateVal === &quot;boolean&quot; &amp;&amp; type === &quot;string&quot; ) &#123;</span><br><span class="line">    //第二个参数为true时，相当于addClass操作,第二个参数为false时,相当于remoeClass操作</span><br><span class="line">    return stateVal ? this.addClass( value ) : this.removeClass( value );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if ( jQuery.isFunction( value ) ) &#123;</span><br><span class="line">    return this.each(function( i ) &#123;</span><br><span class="line">      jQuery( this ).toggleClass( value.call(this, i, this.className, stateVal), stateVal );</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return this.each(function() &#123;</span><br><span class="line"></span><br><span class="line">    //当第一个参数的类型是字符串时</span><br><span class="line">    if ( type === &quot;string&quot; ) &#123;//</span><br><span class="line">      // toggle individual class names</span><br><span class="line">      var className,</span><br><span class="line">        i = 0,</span><br><span class="line">        self = jQuery( this ),</span><br><span class="line">        classNames = value.match( core_rnotwhite ) || [];// 匹配非空格字符串进行分割</span><br><span class="line"></span><br><span class="line">      while ( (className = classNames[ i++ ]) ) &#123;</span><br><span class="line">        // check each className given, space separated list</span><br><span class="line">        // 判断该类名是否存在于原class中，存在则删除，反之则添加</span><br><span class="line">        if ( self.hasClass( className ) ) &#123;</span><br><span class="line">          self.removeClass( className );</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          self.addClass( className );</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    // Toggle whole class name</span><br><span class="line">    // 当第一个参数类型为undefined或者布尔型时</span><br><span class="line">    /*</span><br><span class="line">      $(&quot;#div1&quot;).toogleClass(false);//删除所有className</span><br><span class="line">      $(&quot;#div1&quot;).toogleClass(true); //将原来(删除前)的className添加回来</span><br><span class="line">    */</span><br><span class="line">    &#125; else if ( type === core_strundefined || type === &quot;boolean&quot; ) &#123;</span><br><span class="line">      if ( this.className ) &#123;</span><br><span class="line">        // store className if set</span><br><span class="line">        data_priv.set( this, &quot;__className__&quot;, this.className );// 私有数据缓存</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      // If the element has a class name or if we&apos;re passed &quot;false&quot;,</span><br><span class="line">      // then remove the whole classname (if there was one, the above saved it).</span><br><span class="line">      // Otherwise bring back whatever was previously saved (if anything),</span><br><span class="line">      // falling back to the empty string if nothing was stored.</span><br><span class="line">      this.className = this.className || value === false ? &quot;&quot; : data_priv.get( this, &quot;__className__&quot; ) || &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">hasClass: function( selector ) &#123;</span><br><span class="line">  var className = &quot; &quot; + selector + &quot; &quot;,</span><br><span class="line">    i = 0,</span><br><span class="line">    l = this.length;</span><br><span class="line">  for ( ; i &lt; l; i++ ) &#123;</span><br><span class="line">    //判断节点类型是否为元素,是就继续判断</span><br><span class="line">    //将原className中的空白符全部用空格代替，之后判断其中是否包含参数中的className</span><br><span class="line">    //有就返回true</span><br><span class="line">    if ( this[i].nodeType === 1 &amp;&amp; (&quot; &quot; + this[i].className + &quot; &quot;).replace(rclass, &quot; &quot;).indexOf( className ) &gt;= 0 ) &#123;</span><br><span class="line">      return true;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return false;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">hasClass: function( selector ) &#123;</span><br><span class="line">  var className = &quot; &quot; + selector + &quot; &quot;,</span><br><span class="line">    i = 0,</span><br><span class="line">    l = this.length;</span><br><span class="line">  for ( ; i &lt; l; i++ ) &#123;</span><br><span class="line">    //判断节点类型是否为元素,是就继续判断</span><br><span class="line">    //将原className中的空白符全部用空格代替，之后判断其中是否包含参数中的className</span><br><span class="line">    //有就返回true</span><br><span class="line">    if ( this[i].nodeType === 1 &amp;&amp; (&quot; &quot; + this[i].className + &quot; &quot;).replace(rclass, &quot; &quot;).indexOf( className ) &gt;= 0 ) &#123;</span><br><span class="line">      return true;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return false;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h5 id="（3）val"><a href="#（3）val" class="headerlink" title="（3）val()"></a>（3）val()</h5><table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>作用</th>
-<th>使用方法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>val()</td>
-<td>设置或者获取元素的值</td>
-<td><code>$(&quot;#input1&quot;).val(&quot;test&quot;);//将$(&quot;#input1&quot;)元素的值设置为test    $(&quot;#input1&quot;).val();//获取$(&quot;#input1&quot;)元素的值</code></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p> <strong>源码分析</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">val: function( value ) &#123;</span><br><span class="line">  //$(&quot;#input&quot;).val(&quot;123&quot;)</span><br><span class="line">  var hooks, ret, isFunction,</span><br><span class="line">    elem = this[0];// 将第一个元素存储</span><br><span class="line"></span><br><span class="line">  // 当参数长度不为0，即有参数时</span><br><span class="line">  if ( !arguments.length ) &#123;</span><br><span class="line">    if ( elem ) &#123;</span><br><span class="line">      //做兼容</span><br><span class="line">      // 先找元素的type：radio、checkbox</span><br><span class="line">      // 当type找不到时再找元素的nodeName：option、select</span><br><span class="line">      hooks = jQuery.valHooks[ elem.type ] || jQuery.valHooks[ elem.nodeName.toLowerCase() ];</span><br><span class="line"></span><br><span class="line">      if ( hooks &amp;&amp; &quot;get&quot; in hooks &amp;&amp; (ret = hooks.get( elem, &quot;value&quot; )) !== undefined ) &#123;</span><br><span class="line">        return ret;// 获得兼容后的结果</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      ret = elem.value;</span><br><span class="line"></span><br><span class="line">      return typeof ret === &quot;string&quot; ?</span><br><span class="line">        // handle most common string cases</span><br><span class="line">        ret.replace(rreturn, &quot;&quot;) :</span><br><span class="line">        // handle cases where value is null/undef or number</span><br><span class="line">        ret == null ? &quot;&quot; : ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  isFunction = jQuery.isFunction( value );// 判断传入的参数value是否为一个函数</span><br><span class="line"></span><br><span class="line">  return this.each(function( i ) &#123;</span><br><span class="line">    var val;</span><br><span class="line"></span><br><span class="line">    if ( this.nodeType !== 1 ) &#123;</span><br><span class="line">      //过滤非元素节点</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if ( isFunction ) &#123;</span><br><span class="line">      val = value.call( this, i, jQuery( this ).val() );</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      val = value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Treat null/undefined as &quot;&quot;; convert numbers to string</span><br><span class="line">    if ( val == null ) &#123;</span><br><span class="line">      val = &quot;&quot;;</span><br><span class="line">    &#125; else if ( typeof val === &quot;number&quot; ) &#123;</span><br><span class="line">      val += &quot;&quot;;//将数字类型转为字符串</span><br><span class="line">    &#125; else if ( jQuery.isArray( val ) ) &#123;</span><br><span class="line">      val = jQuery.map(val, function ( value ) &#123;//遍历整个数组</span><br><span class="line">        return value == null ? &quot;&quot; : value + &quot;&quot;;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    hooks = jQuery.valHooks[ this.type ] || jQuery.valHooks[ this.nodeName.toLowerCase() ];</span><br><span class="line"></span><br><span class="line">    // If set returns undefined, fall back to normal setting</span><br><span class="line">    if ( !hooks || !(&quot;set&quot; in hooks) || hooks.set( this, val, &quot;value&quot; ) === undefined ) &#123;</span><br><span class="line">      this.value = val;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>valHooks: 针对option\select\radio\checkbox</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line">valHooks: &#123;</span><br><span class="line">  //下拉菜单子选项</span><br><span class="line">  option: &#123;</span><br><span class="line">    get: function( elem ) &#123;</span><br><span class="line">      // attributes.value is undefined in Blackberry 4.7 but</span><br><span class="line">      // uses .value. See #6932</span><br><span class="line">      // 争对低版本ie浏览器(ie7)以下\黑莓4.7以下</span><br><span class="line">      // 当value值不存在时，val.specified为false,所以返回elem.text</span><br><span class="line">      // 高版本浏览器中，不存在elem.attributes.value，直接返回elem.value</span><br><span class="line">      var val = elem.attributes.value;</span><br><span class="line">      return !val || val.specified ? elem.value : elem.text;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  //下拉菜单</span><br><span class="line">  select: &#123;</span><br><span class="line">    get: function( elem ) &#123;</span><br><span class="line">      var value, option,</span><br><span class="line">        options = elem.options,</span><br><span class="line">        index = elem.selectedIndex,// 当前索引值</span><br><span class="line">        one = elem.type === &quot;select-one&quot; || index &lt; 0,// 单选时为true，多选时为false</span><br><span class="line">        values = one ? null : [],</span><br><span class="line">        max = one ? index + 1 : options.length,</span><br><span class="line">        i = index &lt; 0 ?</span><br><span class="line">          max :</span><br><span class="line">          one ? index : 0;</span><br><span class="line"></span><br><span class="line">      // Loop through all the selected options</span><br><span class="line">      for ( ; i &lt; max; i++ ) &#123;</span><br><span class="line">        option = options[ i ];</span><br><span class="line"></span><br><span class="line">        // IE6-9 doesn&apos;t update selected after form reset (#2551)</span><br><span class="line">        if ( ( option.selected || i === index ) &amp;&amp;</span><br><span class="line">            // Don&apos;t return options that are disabled or in a disabled optgroup</span><br><span class="line">            // 过滤掉禁用的选项</span><br><span class="line">            ( jQuery.support.optDisabled ? !option.disabled : option.getAttribute(&quot;disabled&quot;) === null ) &amp;&amp;</span><br><span class="line">            ( !option.parentNode.disabled || !jQuery.nodeName( option.parentNode, &quot;optgroup&quot; ) ) ) &#123;</span><br><span class="line"></span><br><span class="line">          // Get the specific value for the option</span><br><span class="line">          value = jQuery( option ).val();</span><br><span class="line"></span><br><span class="line">          // We don&apos;t need an array for one selects</span><br><span class="line">          // 单选</span><br><span class="line">          if ( one ) &#123;</span><br><span class="line">            return value;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          // Multi-Selects return an array</span><br><span class="line">          // 多选</span><br><span class="line">          values.push( value );</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      return values;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    set: function( elem, value ) &#123;</span><br><span class="line">      var optionSet, option,</span><br><span class="line">        options = elem.options,</span><br><span class="line">        values = jQuery.makeArray( value ),</span><br><span class="line">        i = options.length;</span><br><span class="line"></span><br><span class="line">      while ( i-- ) &#123;</span><br><span class="line">        option = options[ i ];</span><br><span class="line">        if ( (option.selected = jQuery.inArray( jQuery(option).val(), values ) &gt;= 0) ) &#123;</span><br><span class="line">          optionSet = true;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      // force browsers to behave consistently when non-matching value is set</span><br><span class="line">      if ( !optionSet ) &#123;</span><br><span class="line">        elem.selectedIndex = -1;</span><br><span class="line">      &#125;</span><br><span class="line">      return values;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">jQuery.each([ &quot;radio&quot;, &quot;checkbox&quot; ], function() &#123;</span><br><span class="line">  jQuery.valHooks[ this ] = &#123;</span><br><span class="line">    set: function( elem, value ) &#123;</span><br><span class="line">      if ( jQuery.isArray( value ) ) &#123;</span><br><span class="line">        return ( elem.checked = jQuery.inArray( jQuery(elem).val(), value ) &gt;= 0 );</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  if ( !jQuery.support.checkOn ) &#123;</span><br><span class="line">    jQuery.valHooks[ this ].get = function( elem ) &#123;</span><br><span class="line">      // Support: Webkit</span><br><span class="line">      // &quot;&quot; is returned instead of &quot;on&quot; if a value isn&apos;t specified</span><br><span class="line">      // 争对老版本的webkit内核的额浏览器：设置默认的值为on</span><br><span class="line">      return elem.getAttribute(&quot;value&quot;) === null ? &quot;on&quot; : elem.value;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注：感谢妙味课堂</p>
-</blockquote>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/layout/pay.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">源码分析</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">年终终结</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <!-- <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/17/jQuery01/" alt="微信分享二维码">
-    </div> -->
-    <div id="js-wx-box"></div>
-</div>
-
-<div class="mask js-mask"></div>
-<script src="//static.runoob.com/assets/qrcode/qrcode.min.js"></script>
-<script>
-  var sUrl = window.location.href.replace(/index\.html$/, '');
-  sUrl = /^(http:|https:)\/\//.test(sUrl) ? sUrl : 'http:' + sUrl
-  var qrcode = new QRCode(document.getElementById("js-wx-box"), {
-	  text: sUrl,
-    width : 144,
-    height : 144
-  })
-  console.log(qrcode)
-</script>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/04/20/2017-foodTimeInXiamen/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          2016 食记
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/04/17/jekyll/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">windows下安装jekyll</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -499,9 +230,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
