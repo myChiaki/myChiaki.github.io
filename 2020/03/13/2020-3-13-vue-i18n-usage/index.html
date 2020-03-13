@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue3+ ie10以上兼容处理 | 千秋</title>
+  <title>VUE国际化——vue-i18n的使用 | 千秋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、安装 @babel/polyfill1yarn add @babel/polyfill">
-<meta name="keywords" content="vue,ie">
+  <meta name="description" content="1、安装vue-i18n1npm install vue-i18n 或 yarn add vue-i18n">
+<meta name="keywords" content="国际化,vue-i18n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue3+ ie10以上兼容处理">
-<meta property="og:url" content="http://yoursite.com/2019/05/26/2019-05-26-vue3+ie10compatible/index.html">
+<meta property="og:title" content="VUE国际化——vue-i18n的使用">
+<meta property="og:url" content="http://yoursite.com/2020/03/13/2020-3-13-vue-i18n-usage/index.html">
 <meta property="og:site_name" content="千秋">
-<meta property="og:description" content="1、安装 @babel/polyfill1yarn add @babel/polyfill">
+<meta property="og:description" content="1、安装vue-i18n1npm install vue-i18n 或 yarn add vue-i18n">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-01-01T07:53:23.404Z">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/vue-i18n-usage/i18n.js.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/vue-i18n-usage/i18n.png">
+<meta property="og:updated_time" content="2020-03-13T15:35:31.823Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue3+ ie10以上兼容处理">
-<meta name="twitter:description" content="1、安装 @babel/polyfill1yarn add @babel/polyfill">
+<meta name="twitter:title" content="VUE国际化——vue-i18n的使用">
+<meta name="twitter:description" content="1、安装vue-i18n1npm install vue-i18n 或 yarn add vue-i18n">
+<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/vue-i18n-usage/i18n.js.png">
   
     <link rel="alternative" href="/atom.xml" title="千秋" type="application/atom+xml">
   
@@ -155,32 +158,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2019-05-26-vue3+ie10compatible" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2020-3-13-vue-i18n-usage" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue3+ ie10以上兼容处理
+      VUE国际化——vue-i18n的使用
     </h1>
   
 
         
-        <a href="/2019/05/26/2019-05-26-vue3+ie10compatible/" class="archive-article-date">
-  	<time datetime="2019-05-26T13:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-26</time>
+        <a href="/2020/03/13/2020-3-13-vue-i18n-usage/" class="archive-article-date">
+  	<time datetime="2020-03-13T15:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、安装-babel-polyfill"><a href="#1、安装-babel-polyfill" class="headerlink" title="1、安装 @babel/polyfill"></a>1、安装 @babel/polyfill</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add @babel/polyfill</span><br></pre></td></tr></table></figure>
+        <h3 id="1、安装vue-i18n"><a href="#1、安装vue-i18n" class="headerlink" title="1、安装vue-i18n"></a>1、安装vue-i18n</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-i18n 或 yarn add vue-i18n</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="2、babel-config-js"><a href="#2、babel-config-js" class="headerlink" title="2、babel.config.js"></a>2、babel.config.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  presets: [</span><br><span class="line">    &apos;@vue/app&apos;,</span><br><span class="line">    [</span><br><span class="line">      &apos;@vue/app&apos;,</span><br><span class="line">      &#123;</span><br><span class="line">        polyfills: [</span><br><span class="line">          &apos;es6.promise&apos;,</span><br><span class="line">          &apos;es6.symbol&apos;</span><br><span class="line">        ],</span><br><span class="line">        useBuiltIns: &apos;entry&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &apos;@babel/preset-env&apos;</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
-<h3 id="3、main-js"><a href="#3、main-js" class="headerlink" title="3、main.js"></a>3、main.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &apos;@babel/polyfill&apos;</span><br></pre></td></tr></table></figure>
-<h3 id="4、vue-config-js"><a href="#4、vue-config-js" class="headerlink" title="4、vue.config.js"></a>4、vue.config.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  transpileDependencies: [] // 在此配置使用到的不兼容ie的依赖包，会对该以来同时开启语法语法转换和根据使用情况检测 polyfill</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a href="https://cli.vuejs.org/zh/guide/browser-compatibility.html" target="_blank" rel="noopener">https://cli.vuejs.org/zh/guide/browser-compatibility.html</a></p>
+<h3 id="2、在plugins里添加文件i18n-js"><a href="#2、在plugins里添加文件i18n-js" class="headerlink" title="2、在plugins里添加文件i18n.js"></a>2、在plugins里添加文件i18n.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> VueI18n <span class="keyword">from</span> <span class="string">'vue-i18n'</span></span><br><span class="line"><span class="keyword">import</span> messageList <span class="keyword">from</span> <span class="string">'@/i18n'</span> <span class="comment">// 公共语言包,位置src/i18n/,用于存放一些公共的翻译</span></span><br><span class="line"><span class="keyword">import</span> iviewEn <span class="keyword">from</span> <span class="string">'iview/dist/locale/en-US'</span> <span class="comment">// iview英文语言包</span></span><br><span class="line"><span class="keyword">import</span> iviewZh <span class="keyword">from</span> <span class="string">'iview/dist/locale/zh-CN'</span> <span class="comment">// iview中文语言包</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueI18n)</span><br><span class="line"> </span><br><span class="line">Vue.locale = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> iviewMessage = &#123;</span><br><span class="line">  <span class="string">'zh_CN'</span>: iviewZh,</span><br><span class="line">  <span class="string">'en'</span>: iviewEn</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> messages = &#123;&#125;</span><br><span class="line">messageList.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  _.merge(messages, item)</span><br><span class="line">&#125;)</span><br><span class="line">_.merge(messages, iviewMessage)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> i18nInstance = <span class="keyword">new</span> VueI18n(&#123;</span><br><span class="line">  locale: <span class="string">'zh_CN'</span>, <span class="comment">// 设置语言</span></span><br><span class="line">  fallbackLocale: <span class="string">'zh_CN'</span>, <span class="comment">// 默认语言，当设置的语言不存在时，使用默认语言</span></span><br><span class="line">  messages <span class="comment">// 语言包</span></span><br><span class="line">&#125;)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> i18nMerge = <span class="function">(<span class="params">i18nData</span>) =&gt;</span> &#123; <span class="comment">// 用于将i18nData merge 到对应的语言包中</span></span><br><span class="line">  <span class="built_in">Object</span>.keys(i18nData).forEach(<span class="function">(<span class="params">key, index</span>) =&gt;</span> &#123;</span><br><span class="line">    i18nInstance.mergeLocaleMessage(key, i18nData[key]) <span class="comment">// Merge the registered locale messages with the locale message of locale</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> i18n = i18nInstance</span><br></pre></td></tr></table></figure>
+<h3 id="3、修改main-js"><a href="#3、修改main-js" class="headerlink" title="3、修改main.js"></a>3、修改main.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">import</span> &#123; i18n &#125; <span class="keyword">from</span> <span class="string">'@/plugins/i18n'</span></span><br><span class="line">...</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">Vue.use(iView, &#123;</span><br><span class="line">  i18n: <span class="function"><span class="keyword">function</span> (<span class="params">path, options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> value = i18n.t(path, options)</span><br><span class="line">    <span class="keyword">if</span> (value !== <span class="literal">null</span> &amp;&amp; value !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> value</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;) <span class="comment">// 处理iview 国际化存在的一个bug（详看注释1）</span></span><br><span class="line">...</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  ...</span><br><span class="line">  i18n</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="4、模块中的使用"><a href="#4、模块中的使用" class="headerlink" title="4、模块中的使用"></a>4、模块中的使用</h3><p>在需要国际化的文件index.vue同级添加一个文件i18n.js，如：<br><img src="/assets/blogImg/vue-i18n-usage/i18n.js.png" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// index.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">几种主要的使用方法如下：</span><br><span class="line">    没有参数：&#123;&#123;$t(&apos;customer.custName&apos;)&#125;&#125;</span><br><span class="line">    通过关键字传参：&#123;&#123;$t(&apos;customer.name&apos;, &#123; msg: &apos;千秋&apos; &#125;)&#125;&#125;</span><br><span class="line">    &#123;&#123; $t(&apos;customer.hello&apos;, &#123; msg: &apos;你好&apos; &#125;) &#125;&#125;</span><br><span class="line">    通过列表传参：&#123;&#123;$t(&apos;customer.list&apos;, [&apos;列表1&apos;, &apos;列表2&apos;])&#125;&#125;</span><br><span class="line">    还可以自定义格式化方式，具体查看官方文档</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &apos;./i18n.js&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// i18n.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; i18nMerge &#125; <span class="keyword">from</span> <span class="string">'@/plugins/i18n'</span></span><br><span class="line"><span class="keyword">const</span> i18n = &#123;</span><br><span class="line">    <span class="string">'zh_CN'</span>: &#123; <span class="comment">// 需注明模块名（如：customer），防止其他模块有同名的国际化互相影响</span></span><br><span class="line">        customer: &#123;</span><br><span class="line">            custName: <span class="string">'客户名称'</span>,</span><br><span class="line">            name: <span class="string">'我叫&#123;msg&#125;'</span>,</span><br><span class="line">            list: <span class="string">'这是&#123;0&#125;和&#123;1&#125;'</span>,</span><br><span class="line">            hello: <span class="string">'%&#123;msg&#125; 世界'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">    <span class="string">'en'</span>: &#123;</span><br><span class="line">        customer: &#123;</span><br><span class="line">            custName: <span class="string">'Customer Name'</span>,</span><br><span class="line">            name: <span class="string">'my name is &#123;msg&#125;'</span>,</span><br><span class="line">            list: <span class="string">'this is &#123;0&#125; and &#123;1&#125;'</span>,</span><br><span class="line">            hello: <span class="string">'%&#123;msg&#125; world'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">i18nMerge(i18n)</span><br></pre></td></tr></table></figure>
+<h3 id="5、公共语言包"><a href="#5、公共语言包" class="headerlink" title="5、公共语言包"></a>5、公共语言包</h3><p>位置：src/i18n/<br><img src="/assets/blogImg/vue-i18n-usage/i18n.png" alt><br>用途：存放一些公共的国际化翻译<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// base.js</span></span><br><span class="line"><span class="keyword">const</span> i18n = &#123; </span><br><span class="line">  <span class="string">'zh_CN'</span>: &#123;</span><br><span class="line">    base: &#123;</span><br><span class="line">      sure: <span class="string">'确定'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">'en'</span>: &#123;</span><br><span class="line">    base: &#123;</span><br><span class="line">      <span class="string">'sure'</span>: <span class="string">'OK'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="6、语言切换"><a href="#6、语言切换" class="headerlink" title="6、语言切换"></a>6、语言切换</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$i18n.locale = <span class="string">'en-US'</span> <span class="comment">// 需要展示的的语言</span></span><br></pre></td></tr></table></figure>
+<h3 id="7、其他js文件中使用"><a href="#7、其他js文件中使用" class="headerlink" title="7、其他js文件中使用"></a>7、其他js文件中使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; i18n &#125; <span class="keyword">from</span> <span class="string">'@/plugins/i18n'</span> <span class="comment">// 引入VueI18n的实例</span></span><br><span class="line">i18n.t(<span class="string">'base.test'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="注释："><a href="#注释：" class="headerlink" title="注释："></a>注释：</h3><p>1、国际化情况下使用this.$Message.info()等会报错，看源码大概是iview的某些组件没有this.$i18n的方法<br>2、官方文档：<a href="https://kazupon.github.io/vue-i18n/" target="_blank" rel="noopener">https://kazupon.github.io/vue-i18n/</a></p>
 
       
 
@@ -220,11 +227,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">国际化</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ie</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue-i18n</a>
         		</li>
       		
 		</ul>
@@ -280,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <!-- <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/26/2019-05-26-vue3+ie10compatible/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/13/2020-3-13-vue-i18n-usage/" alt="微信分享二维码">
     </div> -->
     <div id="js-wx-box"></div>
 </div>
@@ -306,18 +313,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/01/2020-01-01-2019End/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          2019 年终。
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/20/2017-foodTimeInXiamen/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2016 食记</div>
+    <a href="/2020/03/13/2020-3-13-flex/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Flex 布局</div>
       <i class="icon-circle-right"></i>
     </a>
   
